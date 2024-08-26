@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Orange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Orange</h1>
+    <div class="md">
+        <img src="OIP (2).jpg" alt="orange" height="240" width="363">
+    </div>
+    <br><br>
+    <div class="price">
+    <table cellpadding="10px" >
+        <thead>
+            <th>Quantit : </th>
+            <th>Price : </th>
+            <th>Total : </th>
+        </thead>
+        <tbody>
+            <td>
+                <input type="number" onkeyup="quantit(this)">
+            </td>
+            <td>
+                <input type="number" onkeyup="price(this)">
+            </td>
+            <td class="netPrice">0</td>
+        </tbody>
+        <!-- <tfoot>
+            <th colspan="2">Total : </th>
+            <td id="total">0</td>
+        </tfoot> -->
+    </table>
+    </div>
+    <div>
+        <p>
+            <h3> About orange: </h3>
+
+            An orange, also called sweet orange to distinguish it from the bitter orange (Citrus × aurantium), is the fruit of a tree in the family Rutaceae. Botanically, this is the hybrid Citrus × sinensis, between the pomelo (Citrus maxima) and the mandarin orange (Citrus reticulata). The chloroplast genome, and therefore the maternal line, is that of pomelo. The sweet orange has had its full genome sequenced.
+
+The orange originated in a region encompassing Southern China, Northeast India, and Myanmar; the earliest mention of the sweet orange was in Chinese literature in 314 BC. Orange trees are widely grown in tropical and subtropical areas for their sweet fruit. The fruit of the orange tree can be eaten fresh, or processed for its juice or fragrant peel. In 2022, 76 million tonnes of oranges were grown worldwide, with Brazil producing 22% of the total, followed by India and China.
+        </p>
+    </div>
+    <script>
+        var total=document.getElementById("total")
+        var netprice=document.getElementsByClassName("netprice")
+
+        function quantit (q){
+            var pricevalue=q.parentElement.parentElement.children[1].children[0].value;
+            q.parentElement.parentElement.children[2].innerHTML=q.value*pricevalue
+        }
+        function price (p) {
+            var quantitvalue = p.parentElement.parentElement.children[0].children[0].value;
+            p.parentElement.parentElement.children[2].innerHTML= p.value*quantitvalue
+            
+        }
+
+    </script>
+</body>
+</html>
